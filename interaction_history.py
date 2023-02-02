@@ -10,8 +10,8 @@ with open('tweets.tsv', 'r') as file:
     user_interaction = defaultdict(set)
 
     for row in reader:
-        user = row[0]
-        message = row[1]
+        user = 'pranaykrpiyush'
+        message = row[0]
         if '@' in message:
             # Extract the mention from the message
             mention = message.split('@')[1].split()[0]

@@ -1,18 +1,11 @@
-import csv
-import textcat
+#!pip install langdetect
 
-# load the textcat library
-tc = textcat.TextCat()
+from langdetect import detect
 
-# open the tsv file containing the tweets
-with open("tweets.tsv", "r") as f:
-    reader = csv.DictReader(f, delimiter='\t')
-    for row in reader:
-        # get the text of the tweet
-        message_text = row["Message Text"]
+tweet = "RT @NarutoCyborg: #cancelcusatsemexams #cancelexamscusat Extremely shameful and disgusting as they were doing their protest in a peaceful..."
 
-        # use the libtextcat library to determine the language of the message
-        language = tc.guess_language(message_text)
-
-        # print the language of the message
-        print("Message Text: {}\nLanguage: {}\n".format(message_text, language))
+try:
+    language = detect(tweet)
+    print("The language of the tweet is:", language)
+except Exception as e:
+    print("Error detecting language:", e)

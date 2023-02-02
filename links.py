@@ -13,8 +13,8 @@ with open('tweets.tsv', 'r') as file:
     user_consistency = defaultdict(lambda: defaultdict(int))
 
     for row in reader:
-        user = row[0]
-        message = row[1]
+        user = 'pranaykrpiyush'
+        message = row[0]
         if 'http' in message:
             # Extract the domain name from the link
             link = message.split('http')[1].split('/')[0]

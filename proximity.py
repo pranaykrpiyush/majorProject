@@ -44,6 +44,8 @@ for user in user_proximity:
 
 # Print the proximity information for each user
 for user in user_proximity:
-    print('User:', user)
-    print('Proximity:', user_proximity[user])
-    print()
+    if user_proximity[user]>0:
+
+        print('User:', user)
+        print('Proximity:', user_proximity[user])
+        print()
