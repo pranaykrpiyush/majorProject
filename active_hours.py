@@ -7,8 +7,8 @@ def get_active_hours(filename):
     with open(filename, 'r', encoding='utf-8') as f:
         reader = csv.reader(f, delimiter='\t')
         for row in reader:
-            time = row[0] # Assuming the time is in the first column of the tsv file
-            hour = int(time.split(':')[0]) # Extracting the hour from the time
+            time = row[1] # Assuming the time is in the first column of the tsv file
+            hour = int(time.split(':')[1]) # Extracting the hour from the time
             hours[hour] += 1
 
     # Sorting the hours dictionary by the number of tweets for each hour
